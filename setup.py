@@ -24,7 +24,7 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     long_description_content_type="text/plain",
-    url="https://github.com/hwxing3259/MIND",
+    url="https://github.com/hwxing3259/MIND-revised",
     license="MIT",
     packages=find_packages(exclude=("tests", "tests.*", "docs", "examples")),
     python_requires=">=3.10",
