@@ -33,15 +33,15 @@ that you can feed into any downstream classifier or survival model, and
 ### From source
 
 ```bash
-git clone https://github.com/hwxing3259/MIND.git
-cd MIND
+git clone https://github.com/hwxing3259/MIND-revised.git
+cd MIND-revosed
 pip install -e .
 ```
 
 ### From GitHub directly
 
 ```bash
-pip install git+https://github.com/hwxing3259/MIND.git
+pip install git+https://github.com/hwxing3259/MIND-revised.git
 ```
 
 The package targets Python 3.10–3.12 and is tested on macOS and Ubuntu.
@@ -189,7 +189,7 @@ paper:
   title   = {MIND: Multimodal Integration with Neighbourhood-aware Distributions},
   version = {0.1.0},
   year    = {2026},
-  url     = {https://github.com/hwxing3259/MIND}
+  url     = {https://github.com/hwxing3259/MIND-revised}
 }
 ```
 
@@ -200,7 +200,7 @@ A machine-readable `CITATION.cff` is also included.
 ## Contributing & bug reports
 
 Please open issues and pull requests at
-<https://github.com/hwxing3259/MIND/issues>.
+<https://github.com/hwxing3259/MIND-revised/issues>.
 
 See [`AUTHORS.md`](AUTHORS.md) for the maintainer list and
 [`CHANGELOG.md`](CHANGELOG.md) for release notes.
