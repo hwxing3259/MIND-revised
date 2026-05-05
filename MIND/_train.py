@@ -7,7 +7,7 @@ forward pass setup.
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING
 
 import torch
 from openTSNE import affinity
@@ -16,7 +16,7 @@ if TYPE_CHECKING:  # pragma: no cover - import-only for type checkers
     from .model import MIND
 
 
-def _precompute_data_similarities(model: "MIND") -> None:
+def _precompute_data_similarities(model: MIND) -> None:
     """Pre-compute per-modality NxN neighbourhood-affinity matrices.
 
     Used when training in full-batch mode (the affinity matrix can be
@@ -49,10 +49,10 @@ def _precompute_data_similarities(model: "MIND") -> None:
 
 
 def train_loop(
-    model: "MIND",
+    model: MIND,
     n_epoch: int = 2000,
     lr: float = 1e-3,
-    batch_size: Optional[int] = None,
+    batch_size: int | None = None,
     verbose: bool = True,
 ) -> None:
     """Run the MIND optimisation loop in place.
@@ -91,4 +91,4 @@ def train_loop(
             optimizer.step()
             running_loss += batch_loss.detach().cpu().item()
         if verbose and ep % 1000 == 0:
-            print("Epoch={}".format(ep))
+            print(f"Epoch={ep}")

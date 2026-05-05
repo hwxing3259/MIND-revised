@@ -17,12 +17,10 @@ from __future__ import annotations
 
 import os
 import zipfile
-from typing import Dict
 
 import numpy as np
 import pandas as pd
 import requests
-
 
 # ---------------------------------------------------------------------------
 # Toy dataset (no network)
@@ -37,7 +35,7 @@ def make_toy_dataset(
     missing_rate: float = 0.2,
     noise: float = 0.5,
     seed: int = 0,
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     """Generate a small fully-synthetic multi-omics dataset.
 
     Patients are partitioned into ``n_clusters`` latent groups; each
@@ -117,7 +115,7 @@ def make_toy_dataset(
         keep = int(rng.integers(0, n_modalities))
         missing_masks[keep][patient] = False
 
-    out: Dict[str, pd.DataFrame] = {}
+    out: dict[str, pd.DataFrame] = {}
     for m in range(n_modalities):
         proj = rng.normal(size=(8, n_features))
         x = z @ proj + rng.normal(scale=noise, size=(n, n_features))
@@ -214,7 +212,7 @@ def load_synthetic(
     download_dir: str = _DEFAULT_DOWNLOAD_DIR,
     mode: str = "high",
     download_if_missing: bool = True,
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     """Load the synthetic dataset.
 
     Parameters
@@ -266,7 +264,7 @@ def load_TCGA(
     task: str = "all",
     download_dir: str = _DEFAULT_DOWNLOAD_DIR,
     download_if_missing: bool = True,
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     """Load a per-cancer slice of the TCGA dataset.
 
     Parameters
@@ -296,7 +294,7 @@ def load_TCGA(
 
     base = os.path.join(download_dir, "TCGA_preprocessed", cancer_type)
     mods = ["RNA", "methyl", "CNA", "miRNA", "RPPA"]
-    ans: Dict[str, pd.DataFrame] = {
+    ans: dict[str, pd.DataFrame] = {
         "clinical": pd.read_csv(
             os.path.join(base, "clinic_data.csv"), header=0, index_col=0
         )
@@ -342,7 +340,7 @@ def load_CCMA(
     task: str = "all",
     download_dir: str = _DEFAULT_DOWNLOAD_DIR,
     download_if_missing: bool = True,
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     """Load the CCMA dataset.
 
     Parameters
@@ -368,7 +366,7 @@ def load_CCMA(
         _ensure_local(get_CCMA, download_dir, "CCMA_preprocessed")
 
     base = os.path.join(download_dir, "CCMA_preprocessed")
-    ans: Dict[str, pd.DataFrame] = {
+    ans: dict[str, pd.DataFrame] = {
         "clinical": pd.read_csv(
             os.path.join(base, "clinical.csv"), header=0, index_col=0
         )
@@ -399,7 +397,7 @@ def load_CCLE(
     task: str = "all",
     download_dir: str = _DEFAULT_DOWNLOAD_DIR,
     download_if_missing: bool = True,
-) -> Dict[str, pd.DataFrame]:
+) -> dict[str, pd.DataFrame]:
     """Load the CCLE dataset.
 
     Parameters
@@ -425,7 +423,7 @@ def load_CCLE(
         _ensure_local(get_CCLE, download_dir, "CCLE_preprocessed")
 
     base = os.path.join(download_dir, "CCLE_preprocessed")
-    ans: Dict[str, pd.DataFrame] = {
+    ans: dict[str, pd.DataFrame] = {
         "clinical": pd.read_csv(
             os.path.join(base, "clinic_data.csv"), header=0, index_col=0
         )

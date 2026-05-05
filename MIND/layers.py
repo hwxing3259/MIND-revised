@@ -7,13 +7,13 @@ straightforward to test or swap them out without touching the model class.
 
 from __future__ import annotations
 
-from typing import List, Sequence
+from collections.abc import Sequence
 
 import torch
 import torch.nn as nn
 
 
-def block(in_c: int, out_c: int) -> List[nn.Module]:
+def block(in_c: int, out_c: int) -> list[nn.Module]:
     """Return a ``[Linear, SiLU]`` block as a list of layers.
 
     Parameters
@@ -74,7 +74,7 @@ class MLP(nn.Module):
         super().__init__()
         self.output_dim = output_dim
         inter_dims = list(inter_dims)
-        layers: List[nn.Module] = [*block(input_dim, inter_dims[0])]
+        layers: list[nn.Module] = [*block(input_dim, inter_dims[0])]
         for i in range(len(inter_dims) - 1):
             layers += [*block(inter_dims[i], inter_dims[i + 1])]
         layers += [nn.Linear(inter_dims[-1], output_dim)]

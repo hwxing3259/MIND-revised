@@ -10,7 +10,7 @@ The training loop is delegated to :mod:`MIND._train`.
 
 from __future__ import annotations
 
-from typing import Dict, List, Optional, Sequence, Tuple, Union
+from collections.abc import Sequence
 
 import numpy as np
 import pandas as pd
@@ -83,11 +83,11 @@ class MIND(nn.Module):
 
     def __init__(
         self,
-        data_dict: Dict[str, pd.DataFrame],
+        data_dict: dict[str, pd.DataFrame],
         emb_dim: int = 128,
         device: str = "cpu",
         alpha: float = 5e-2,
-        perp: Union[int, Sequence[int]] = 30,
+        perp: int | Sequence[int] = 30,
         beta: float = 1.0,
     ) -> None:
         super().__init__()
@@ -105,19 +105,19 @@ class MIND(nn.Module):
             for _ in list(data_dict.values())
         ]
 
-        self.input_dim_list: List[int] = [_.shape[1] for _ in data_list]
+        self.input_dim_list: list[int] = [_.shape[1] for _ in data_list]
         self.device: str = device
         self.P: float = float(np.mean(self.input_dim_list))
         self.N: int = data_list[0].shape[0]
-        self.data_list: List[torch.Tensor] = data_list
-        self.presence: List[torch.Tensor] = presence
+        self.data_list: list[torch.Tensor] = data_list
+        self.presence: list[torch.Tensor] = presence
         self.emb_dim: int = emb_dim
         self.alpha: float = alpha
         self.beta: float = beta
-        self.perp: Union[int, Sequence[int]] = perp
+        self.perp: int | Sequence[int] = perp
 
-        self.data_similarities: List[torch.Tensor] = []
-        self.data_idx_loader: Optional[torch.utils.data.DataLoader] = None
+        self.data_similarities: list[torch.Tensor] = []
+        self.data_idx_loader: torch.utils.data.DataLoader | None = None
 
         self.decoder_list = nn.ModuleList(
             [
@@ -235,8 +235,8 @@ class MIND(nn.Module):
     # ------------------------------------------------------------------
 
     def get_embedding(
-        self, idx_list: Optional[torch.Tensor] = None
-    ) -> Union[Tuple[torch.Tensor, torch.Tensor], torch.Tensor]:
+        self, idx_list: torch.Tensor | None = None
+    ) -> tuple[torch.Tensor, torch.Tensor] | torch.Tensor:
         """Compute the shared latent embedding for some or all patients.
 
         Parameters
@@ -289,7 +289,7 @@ class MIND(nn.Module):
         )
         return mean_z + torch.randn_like(log_std_z) * log_std_z.exp()
 
-    def predict(self) -> List[torch.Tensor]:
+    def predict(self) -> list[torch.Tensor]:
         """Reconstruct every modality from the posterior-mean embedding.
 
         Returns
@@ -382,7 +382,7 @@ class MIND(nn.Module):
         self,
         n_epoch: int = 2000,
         lr: float = 1e-3,
-        batch_size: Optional[int] = None,
+        batch_size: int | None = None,
         verbose: bool = True,
     ) -> None:
         """Train the model in place.
