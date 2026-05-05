@@ -1,6 +1,6 @@
 # MIND: Multimodal Integration with Neighbourhood-aware Distributions
 
-[![CI](https://github.com/hwxing3259/MIND/actions/workflows/ci.yml/badge.svg)](https://github.com/hwxing3259/MIND/actions/workflows/ci.yml)
+[![CI](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml/badge.svg)](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
 
