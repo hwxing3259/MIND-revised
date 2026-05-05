@@ -200,7 +200,7 @@ A machine-readable `CITATION.cff` is also included.
 ## Contributing & bug reports
 
 Please open issues and pull requests at
-<https://github.com/MIND-revised/issues>.
+<https://github.com/hwxing3259/MIND-revised/issues>.
 
 See [`AUTHORS.md`](AUTHORS.md) for the maintainer list and
 [`CHANGELOG.md`](CHANGELOG.md) for release notes.
