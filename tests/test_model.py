@@ -2,12 +2,9 @@
 
 from __future__ import annotations
 
-import numpy as np
 import torch
 
-from MIND import MIND
 from MIND.layers import MLP
-
 
 # ---------------------------------------------------------------------------
 # MLP layer
@@ -58,7 +55,7 @@ def test_get_embedding_indexed_shape(toy_model):
 def test_predict_returns_one_per_modality(toy_model):
     recons = toy_model.predict()
     assert len(recons) == len(toy_model.data_list)
-    for r, dat in zip(recons, toy_model.data_list):
+    for r, dat in zip(recons, toy_model.data_list, strict=True):
         assert r.shape == dat.shape
 
 
