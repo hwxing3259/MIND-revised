@@ -1,6 +1,6 @@
 # MIND: Multimodal Integration with Neighbourhood-aware Distributions
 
-[![CI](https://github.com/MIND-revised/actions/workflows/ci.yml/badge.svg)](https://github.com/MIND-revised/actions/workflows/ci.yml)
+[![CI](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml/badge.svg)](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
 
@@ -33,15 +33,15 @@ that you can feed into any downstream classifier or survival model, and
 ### From source
 
 ```bash
-git clone https://github.com/MIND-revised.git
-cd MIND-revosed
+git clone https://github.com/hwxing3259/MIND-revised.git
+cd MIND-revised
 pip install -e .
 ```
 
 ### From GitHub directly
 
 ```bash
-pip install git+https://github.com/MIND-revised.git
+pip install git+https://github.com/hwxing3259/MIND-revised.git
 ```
 
 The package targets Python 3.10–3.12 and is tested on macOS and Ubuntu.
@@ -189,7 +189,7 @@ paper:
   title   = {MIND: Multimodal Integration with Neighbourhood-aware Distributions},
   version = {0.1.0},
   year    = {2026},
-  url     = {https://github.com/MIND-revised}
+  url     = {https://github.com/hwxing3259/MIND-revised}
 }
 ```
 
