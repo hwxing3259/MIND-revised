@@ -16,8 +16,8 @@ Quick links
 -----------
 
 * `bioRxiv preprint <https://www.biorxiv.org/content/10.1101/2025.09.15.676314v1.full.pdf>`_
-* `Source code (GitHub) <https://github.com/hwxing3259/MIND>`_
-* `Issue tracker <https://github.com/hwxing3259/MIND/issues>`_
+* `Source code (GitHub) <https://github.com/hwxing3259/MIND-revised>`_
+* `Issue tracker <https://github.com/hwxing3259/MIND-revised/issues>`_
 
 Indices
 -------
