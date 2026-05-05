@@ -35,14 +35,20 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
 
 autodoc_typehints = "description"
 autodoc_default_options = {
     "members": True,
     "undoc-members": True,
     "show-inheritance": True,
+    # Don't pull in inherited methods from torch.nn.Module — their docstrings
+    # are written for PyTorch's own Sphinx config and emit reST warnings here.
+    "inherited-members": False,
 }
+
+# Suppress reST issues that originate inside third-party docstrings we don't
+# control. This is robust against future PyTorch releases adding more methods.
+suppress_warnings = ["docutils"]
 
 napoleon_google_docstring = False
 napoleon_numpy_docstring = True
