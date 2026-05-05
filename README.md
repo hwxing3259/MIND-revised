@@ -1,6 +1,6 @@
 # MIND: Multimodal Integration with Neighbourhood-aware Distributions
 
-[![CI](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml/badge.svg)](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml)
+[![CI](https://github.com/-revised/actions/workflows/ci.yml/badge.svg)](https://github.com/-revised/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
 
@@ -33,7 +33,7 @@ that you can feed into any downstream classifier or survival model, and
 ### From source
 
 ```bash
-git clone https://github.com/hwxing3259/MIND-revised.git
+git clone https://github.com/-revised.git
 cd MIND-revosed
 pip install -e .
 ```
@@ -41,7 +41,7 @@ pip install -e .
 ### From GitHub directly
 
 ```bash
-pip install git+https://github.com/hwxing3259/MIND-revised.git
+pip install git+https://github.com/-revised.git
 ```
 
 The package targets Python 3.10–3.12 and is tested on macOS and Ubuntu.
@@ -189,7 +189,7 @@ paper:
   title   = {MIND: Multimodal Integration with Neighbourhood-aware Distributions},
   version = {0.1.0},
   year    = {2026},
-  url     = {https://github.com/hwxing3259/MIND-revised}
+  url     = {https://github.com/-revised}
 }
 ```
 
@@ -200,7 +200,7 @@ A machine-readable `CITATION.cff` is also included.
 ## Contributing & bug reports
 
 Please open issues and pull requests at
-<https://github.com/hwxing3259/MIND-revised/issues>.
+<https://github.com/-revised/issues>.
 
 See [`AUTHORS.md`](AUTHORS.md) for the maintainer list and
 [`CHANGELOG.md`](CHANGELOG.md) for release notes.
