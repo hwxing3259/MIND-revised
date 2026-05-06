@@ -18,7 +18,7 @@ The package is associated with the bioRxiv preprint
 
 ---
 
-## What it does (in one paragraph)
+## What it does (tl;dr)
 
 You hand MIND a dictionary `{modality_name: pandas.DataFrame}` where every
 DataFrame has the same number of rows (one per patient) and rows for missing
