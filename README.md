@@ -1,3 +1,14 @@
+> [!IMPORTANT]
+> **This repository has moved.** The revised MIND implementation is now the
+> canonical version and lives at **<https://github.com/hwxing3259/MIND>**.
+>
+> This repository is archived and read-only. Please file issues, open pull
+> requests, and install from the main repository instead:
+>
+> ```bash
+> pip install git+https://github.com/hwxing3259/MIND.git
+> ```
+
 # MIND: Multimodal Integration with Neighbourhood-aware Distributions
 
 [![CI](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml/badge.svg)](https://github.com/hwxing3259/MIND-revised/actions/workflows/ci.yml)
